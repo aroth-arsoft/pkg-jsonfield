@@ -1,0 +1,25 @@
+Source: jsonfield
+Section: admin
+Priority: optional
+Maintainer: Andreas Roth <aroth@arsoft-online.com>
+Standards-Version: 3.9.8
+Build-Depends: debhelper (>= 9), dh-python, python (>= 2.7), python3 (>= 3.4),
+ python-setuptools, python3-setuptools
+X-Python-Version: >=2.7
+X-Python3-Version: >=2.4
+
+Package: python-django-jsonfield
+Section: python
+Architecture: all
+Depends: ${python:Depends}, ${misc:Depends}
+Description: Django field for JSON data
+ A reusable Django field that allows you to store validated JSON
+ in your model.
+
+Package: python3-django-jsonfield
+Section: python
+Architecture: all
+Depends: ${python3:Depends}, ${misc:Depends}
+Description: Django field for JSON data
+ A reusable Django field that allows you to store validated JSON
+ in your model.

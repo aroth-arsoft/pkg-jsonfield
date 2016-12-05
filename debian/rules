@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+
+buildvers := $(shell pyversions -sv)
+#build3vers := $(shell py3versions -sv)
+
+export PYBUILD_NAME=jsonfield
+export PYBUILD_DISABLE=test
+
+export PYBUILD_DESTDIR_python2=debian/python-django-jsonfield/
+export PYBUILD_DESTDIR_python3=debian/python3-django-jsonfield/
+
+# Don't compress .py files
+DEB_COMPRESS_EXCLUDE := .py
+
+TARGET_DISTRIBUTION := $(shell dpkg-parsechangelog  | awk '/Distribution/ { print $$2}')
+SUBSTVARS=
+
+%:
+	dh $@ --with python2,python3 --buildsystem=pybuild

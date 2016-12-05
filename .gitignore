@@ -1,0 +1,5 @@
+/.pybuild/
+/jsonfield/
+/PKG-INFO
+/README.rst
+/setup.py
